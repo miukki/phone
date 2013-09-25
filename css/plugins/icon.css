@@ -1,0 +1,20 @@
+i{ 
+	background-repeat: no-repeat; display: inline-block; vertical-align:middle; font-style:normal;
+}
+.icon-add {
+    width: 50px; height: 44px; background: url('/img/icon-add.png') center center no-repeat;
+}
+.icon-save, .icon-edit, .icon-delete {
+    width: 50px; height: 50px; opacity: 0.7;
+    background-image: url('/img/icon-button.png'); 
+    -webkit-background-size: auto 100%; background-size: auto 100%;
+}
+.icon-save {
+    background-position: left center;
+}
+.icon-edit {
+    background-position: -100px center;
+}
+.icon-delete {
+    background-position: -50px center;
+}
