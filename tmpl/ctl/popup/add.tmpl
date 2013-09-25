@@ -1,8 +1,8 @@
 <form class="p-20" id="form">
 	<input type="hidden" name="id">
 	<div class="cf">
-		<input type="text" name="${APP.cst.usrname}" placeholder="name" class="size1of2 fll">
-		<input type="text" name="${APP.cst.usrtel}" placeholder="+xx xxxx xxxx (10 digits and code of country)" id="tel" class="size1of2 ml-10 fll">
+		<input type="text" name="${APP.cst.usrname}" placeholder="name" class="size1of2 fll" value="${usrname ? usrname : ''}">
+		<input type="text" name="${APP.cst.usrtel}" placeholder="+xx xxxx xxxx (10 digits and code of country)" id="tel" class="size1of2 ml-10 fll" value="${usrtel ? usrtel : ''}">
 	</div>
 	<div id="error" class="c-red mt-10 fll"></div>
 	<div class="txtR mt-10"><input class="button bg-green" type="submit" value="send"></div>

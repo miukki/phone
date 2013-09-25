@@ -1,3 +1,9 @@
-<li data-id="${id}" class="cf">
-	<div class="flr"><i class="icon-edit"></i><i data-action="delete" data-id="${id}" class="click icon-delete ml-10"></i></div><nobr>${usrname}&nbsp;<nobr>(${'+'+usrtel})</nobr></nobr>
+<li class="cf">
+	<div class="flr">
+		<i class="icon-edit pop" data-id="${id}" data-action="edit" data-popup-id="add"></i>
+		<i data-action="delete" data-id="${id}" class="click icon-delete ml-10"></i>
+	</div>
+	<div class="over">
+		<nobr>${usrname}&nbsp;<nobr>{{if usrtel}}(${'+'+usrtel}){{/if}}</nobr></nobr>
+	</div>
 </li>

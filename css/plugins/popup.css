@@ -16,8 +16,8 @@
 	content: ""; display: block; position: absolute; width: 27px; height: 29px; right: 30px; top: -28px;
 	background-image: url('/img/arrowpopup.png'); background-repeat: no-repeat; background-position: top left;
 }
-.popup.edit:before{
+.popup.editpop:before{
     width: 26px; height: 27px; background-image: url('/img/arrowpopupleft.png'); right: -26px; margin-top: -14px; top: 50%;
 }
-.popup.add { top: 80px !important; left: auto !important; right: 30px !important;}
+.popup.addpop { top: 80px !important; left: auto !important; right: 30px !important;}
 .popup.save { top: 80px !important; left: auto !important; right: 100px !important;}

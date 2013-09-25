@@ -5,14 +5,14 @@
 	self.data = null;
 
 	self.open = function (data) {
-		self.data = $.extend({}, data);
+		self.data = $.extend({'id': ''}, data);
 		
 		APP.popup.open({
 			'id': 'edit',
 			'title': '',
 			'callback': _render,
-			'width': '40%',
-			'height': '40%',
+			'width': '60%',
+			'height': '43%',
 			'data': self.data,
 			'target': self.data.target,
 			'position': 'left'
@@ -21,7 +21,6 @@
 
 	var _render = function (popup) {
 		self.obj = popup;
-		
 	};
 	
 })();

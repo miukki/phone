@@ -5,7 +5,11 @@
 	self.data = null;
 
 	self.open = function (data) {
-		self.data = $.extend({}, data);
+		self.data = $.extend({'id': '', 'usrname': '', 'usrtel': ''}, data);
+		if (self.data.action  == 'edit') {
+    		var item = localStorage.getObject(APP.cst.substt + self.data.id);
+    		self.data = $.extend(self.data, item);
+		};
 		
 		APP.popup.open({
 			'id': 'add',
@@ -14,6 +18,9 @@
 			'width': '60%',
 			'height': '43%',
 			'data': self.data,
+			'target': (self.data.action && (self.data.action  == 'edit')) ? self.data.target : false,
+			'position': (self.data.action && (self.data.action  == 'edit')) ? 'left' : 'center',
+			'className': (self.data.action && (self.data.action  == 'edit')) ? 'editpop': 'addpop'
 		});	
 	};
 
@@ -42,15 +49,17 @@
                 return; 
             };
 		    
-		    var index = Object.keys(localStorage).length;
-		    if (index) {
-		      +index;
+		    if (self.data.action && (self.data.action  == 'add')) {
+    		    self.data.id = Object.keys(localStorage).length;
+    		    if (self.data.id) {
+    		      +self.data.id;
+    		    };
 		    };
 		    
-		    obj = $.extend(obj, {'id': index });
+		    obj = $.extend(obj, {'id': self.data.id });
 
 		    localStorage.setObject(APP.cst.substt + obj.id, obj, function () {
-                APP.ctl.book.list.push(localStorage.getObject(APP.cst.substt + obj.id));
+                APP.ctl.book.getList();
                 APP.ctl.book.renderList();
                 APP.popup.close({'id': 'add'});
                 APP.ctl.book.fixScroll();

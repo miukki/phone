@@ -11,7 +11,7 @@
 		APP.util.render(self.obj);
 		_clearData();
 
-		_getList();
+		self.getList();
 		self.renderList();
 		self.fixScroll();
 
@@ -33,7 +33,7 @@
 	var _click = function () {
 	    if ($(this).data('action') == 'delete') {
     	    localStorage.removeObject(APP.cst.substt + $(this).data('id'), function () {
-    	        _getList();
+    	        self.getList();
     	        self.renderList();
     	        self.fixScroll();
     	    });
@@ -48,14 +48,14 @@
 	var _clearData = function () {
 	   	self.obj.find('#clear').bind('click', function () {
             APP.util.cleanStorage(function() {
-                _getList();
+                self.getList();
                 self.renderList();
                 self.fixScroll();
             });
 		})
 	};
 	
-	var _getList = function () {
+	self.getList = function () {
         self.list = [];
         $.each(localStorage, function(key, value){
             if (key.toString().indexOf(APP.cst.substt) >= 0) {

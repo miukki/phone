@@ -16,7 +16,8 @@
 			'tpl': '',
 			'title': '',
 			'reposition': true,
-			'position': 'center'
+			'position': 'center',
+			'className': ''
 		}, param);
 		
 		var popupId = param.id;
