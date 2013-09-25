@@ -30,8 +30,9 @@
 	};
 	
 	var _getData = function () {
-		self.obj.find('#form').submit( function(e) {
+		self.obj.find('#form').submit( function(event) {
 		    event.preventDefault();
+		    event.stopPropagation();
 		    
 		    var obj = {};
 		    var arr = $(this).serializeArray();
