@@ -12,6 +12,7 @@
 		 'substt': 'contact',
 		 'usrtel': 'usrtel',
 		 'usrname': 'usrname',
+		 'URI': 'data:application/csv;charset=utf-8',
 		
 	};	
 })();
